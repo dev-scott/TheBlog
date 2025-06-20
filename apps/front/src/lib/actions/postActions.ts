@@ -56,10 +56,10 @@ export async function fetchUserPosts({
 
 export async function saveNewPost(
   state: PostFormState,
-  formData: FormData
+  formData: FormData,
 ): Promise<PostFormState> {
   const validatedFields = PostFormSchema.safeParse(
-    Object.fromEntries(formData.entries())
+    Object.fromEntries(formData.entries()),
   );
 
   if (!validatedFields.success)
@@ -73,6 +73,11 @@ export async function saveNewPost(
     thumbnailUrl = await uploadThumbnail(validatedFields.data.thumbnail);
 
   // Todo: call garphql api
+
+  console.log("create post mutation data in postAction", {
+    validatedFields,
+    thumbnailUrl,
+  });
 
   const data = await authFetchGraphQL(print(CREATE_POST_MUTATION), {
     input: {
@@ -90,10 +95,10 @@ export async function saveNewPost(
 
 export async function updatePost(
   state: PostFormState,
-  formData: FormData
+  formData: FormData,
 ): Promise<PostFormState> {
   const validatedFields = PostFormSchema.safeParse(
-    Object.fromEntries(formData.entries())
+    Object.fromEntries(formData.entries()),
   );
 
   if (!validatedFields.success)

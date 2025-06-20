@@ -6,17 +6,29 @@ import Navbar from "@/components/navbar";
 import NavbarContainer from "@/components/NavbarContainer";
 import Providers from "./providers";
 import { Toaster } from "@/components/ui/toaster";
+import { Nunito, Oswald } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+
+// const nunito = Nunito({
+  
+//   subsets: ["latin"],
+// });
+
+const oswald = Oswald({
+subsets:["latin"],
+display:"block"
+
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,9 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${oswald.className} antialiased`}>
         <Providers>
           <NavbarContainer>
             <Navbar />

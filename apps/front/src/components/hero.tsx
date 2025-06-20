@@ -1,33 +1,31 @@
+import { Search } from "lucide-react";
+
 const Hero = () => {
   return (
-    <div className="bg-gradient-to-br from-sky-500 to-indigo-500 text-white pt-12">
-      <div className="container justify-center mx-auto flex flex-col md:flex-row items-center flex-wrap px-3">
-        {/* Left col */}
-        <div className="flex flex-col w-full justify-center items-start md:w-2/5 text-center md:text-left">
-          <p className="capitalize tracking-wide w-full">
-            Explore insights , tutorials, and stories for curious minds like
-            yours
-          </p>
-          <h2 className="my-5 text-5xl font-bold leading-tight">
-            Welcome To Sakura Dev Blog
-          </h2>
-
-          <p className="capitalize leading-normal text-xl">
-            Join a community that thrives on learning, creating and growing
-            together.{" "}
-          </p>
+    <div className=" pt-12">
+      <div className="w-full h-[100px]"></div>
+      <div className="container justify-center mx-auto flex flex-col gap-6  items-center flex-wrap px-3">
+        <h1 className="font-bold text-6xl text-center tracking-widest">
+          Here is our Blogs
+        </h1>
+        <div className="text-center ">
+          <span className="text-center ">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            esse maiores eaque officia voluptatem quisquam magni <br /> neque
+            repudiandae veniam asperiores perferendis cupiditate sapiente,
+            doloribus sit.
+          </span>
         </div>
-
-        {/* right col */}
-        <div className="w-full flex justify-center text-center py-7 md:w-3/5">
-          <img
-            src="/hero.png"
-            alt="hero section"
-            className="w-full md:w-3/5  "
+        <div className="px-3 py-3 rounded-md border border-black/25 flex justify-center items-center gap-4">
+          <Search className="text-red-600" />
+          <input
+            type="text"
+            className="w-full h-full"
+            placeholder="Search a blog ..."
           />
         </div>
       </div>
-      <div className="relative -mt-10 lg:-mt-24">
+      {/* <div className="relative -mt-10 lg:-mt-24">
         <svg
           viewBox="0 0 1428 174"
           version="1.1"
@@ -62,7 +60,7 @@ const Hero = () => {
             </g>
           </g>
         </svg>
-      </div>
+      </div> */}
     </div>
   );
 };
