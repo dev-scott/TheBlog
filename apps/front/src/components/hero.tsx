@@ -16,7 +16,7 @@ const Hero = () => {
             doloribus sit.
           </span>
         </div>
-        <div className="px-3 py-3 rounded-md border border-black/25 flex justify-center items-center gap-4">
+        <div className="px-3 py-3 w-full max-w-screen-sm bg-gray-50/20 rounded-md border border-black/25 flex justify-start items-center gap-4">
           <Search className="text-red-600" />
           <input
             type="text"
